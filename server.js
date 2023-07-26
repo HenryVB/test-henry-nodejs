@@ -59,7 +59,7 @@ app.post('/uploadFile',async function (req,res){
 				   const sqlQuery = "INSERT INTO tbl_usuario (id, nombre, edad, genero) VALUES (?,?,?,?)";
 				   db.pool.query(sqlQuery, [objUser["id"],objUser["name"],objUser["age"],objUser["gender"]])
 				   .then(result => console.log("Registro con ID %s guardado con exito",objUser["id"]))
-				   .catch(error => console.log("Error al guardar registro con ID %s:%s ",objUser["id"],error.message));
+				   .catch(error => console.error("Error al guardar registro con ID %s: \n%s ",objUser["id"],error.message));
 			   }
 				
 			   res.status(201).send('Registros procesados correctamente');
@@ -69,7 +69,7 @@ app.post('/uploadFile',async function (req,res){
 })
 
 app.get('/', function (req, res) {
-   res.send('Test NodeJS');
+   res.send('Test NodeJS is UP');
 })
 
 

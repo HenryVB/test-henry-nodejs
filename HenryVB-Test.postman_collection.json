@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "a8516413-399e-4f9b-8f17-80ebdbb8be8e",
+		"name": "HenryVB-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15485478"
+	},
+	"item": [
+		{
+			"name": "Upload File",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/C:/Users/user/Desktop/test-henry-nodejs/file.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://159.203.179.186:8081/uploadFile",
+					"protocol": "http",
+					"host": [
+						"159",
+						"203",
+						"179",
+						"186"
+					],
+					"port": "8081",
+					"path": [
+						"uploadFile"
+					]
+				},
+				"description": "API que permite subir archivo de registros. En caso ya existan no se registran nuevamente y si fueran nuevos se permite su ingreso"
+			},
+			"response": [
+				{
+					"name": "Upload File Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/test-henry-nodejs/file.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://159.203.179.186:8081/uploadFile",
+							"protocol": "http",
+							"host": [
+								"159",
+								"203",
+								"179",
+								"186"
+							],
+							"port": "8081",
+							"path": [
+								"uploadFile"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-Mgq94DTVa1fEIyr+ymTI7wVr80w\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jul 2023 21:44:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Registros procesados correctamente"
+				}
+			]
+		},
+		{
+			"name": "Get Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://159.203.179.186:8081/getInfo/1",
+					"protocol": "http",
+					"host": [
+						"159",
+						"203",
+						"179",
+						"186"
+					],
+					"port": "8081",
+					"path": [
+						"getInfo",
+						"1"
+					]
+				},
+				"description": "API que permite obtener la informacion de un usuario por su ID. En caso el ID no exista se enviará un mensaje mencionado que la información del usuario no existe."
+			},
+			"response": [
+				{
+					"name": "Get Info Data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://159.203.179.186:8081/getInfo/1",
+							"protocol": "http",
+							"host": [
+								"159",
+								"203",
+								"179",
+								"186"
+							],
+							"port": "8081",
+							"path": [
+								"getInfo",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-RZlhKyjyDTMSXIToqKOmkmC9c5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jul 2023 21:43:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"John\",\n        \"edad\": 25,\n        \"genero\": \"M\"\n    }\n]"
+				},
+				{
+					"name": "Get Info No Data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://159.203.179.186:8081/getInfo/50",
+							"protocol": "http",
+							"host": [
+								"159",
+								"203",
+								"179",
+								"186"
+							],
+							"port": "8081",
+							"path": [
+								"getInfo",
+								"50"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11-noseBlfieC3UPhZkZc4nRzMWcsQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jul 2023 21:44:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuario no existe"
+				}
+			]
+		}
+	]
+}

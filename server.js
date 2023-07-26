@@ -1,6 +1,5 @@
 const http = require("http");
 const express = require('express');
-const fs = require("fs");
 const db = require('./database')
 const app = express();
 const fileupload =  require("express-fileupload");
@@ -10,7 +9,7 @@ app.use(fileupload());
 
 app.get('/getInfo/:id', async (req,res) => {
 	try{
-			console.log("id: "+req.params.id);
+			
 			const sqlQuery = 'SELECT id, nombre, edad, genero FROM tbl_usuario WHERE id=?';
 			
 			
@@ -34,7 +33,6 @@ app.get('/getInfo/:id', async (req,res) => {
 
 app.post('/uploadFile',async function (req,res){
 	
-	console.log("inicio uploadfile");
 	
 	if(req.files){
 	   
